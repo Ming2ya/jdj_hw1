@@ -6,6 +6,7 @@ int main()
     while (1)
     {
         char op;
+        int i, j;
         scanf("%c", &op);
         switch(op) 
         {
