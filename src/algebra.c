@@ -68,7 +68,7 @@ Matrix mul_matrix(Matrix a, Matrix b)
         for (i = 0; i < a.rows; i++)
         {
             for (j = 0; j < b.cols; j++){
-                int sum = 0;
+                double sum = 0;
                 for (k = 0; k < a.cols; k++)
                 {
                     sum += a.data[i][k] * b.data[k][j];
