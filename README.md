@@ -4,7 +4,7 @@
 
 ## 开发日志（应该叫这个吗？）
 
-## ver. 半成品
+### ver. 半成品
 
 ####	 	函数部分
 
@@ -72,4 +72,8 @@ include_directories (inc)
 
 add_executable (main ${SRC_LIST})
 ````
+
+### ver 半成品2
+
+修改了mol函数中的错误，data中存储的是double型数据，我定义变量时写成int型了
 
