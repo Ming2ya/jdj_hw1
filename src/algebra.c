@@ -110,10 +110,44 @@ Matrix transpose_matrix(Matrix a)
 
 double det_matrix(Matrix a)
 {
-    // ToDo
-    return 0;
+    if (a.rows != a.cols)
+    {
+        printf("Error: The matrix must be a square matrix.\n");
+        return 0;
+    }
+    else
+    {
+        if (a.rows == 1)
+        {
+            return a.data[0][0];
+        }
+        else
+        {
+            int i, j, k, flag = 0;
+            double sum = 0.0;
+            for (i = 0; i < a.cols; i++)
+            {
+                Matrix b = create_matrix(a.rows-1, a.cols-1);
+                for (j = 1; j < a.rows; j++){
+                    for (k = 0; k < a.cols; k++)
+                    {
+                        if (k == i)
+                        {
+                            flag = 1;
+                            continue;
+                        }
+                        else 
+                        {
+                            b.data[j-1][k - flag] = a.data[j][k];
+                        }
+                    }
+                }
+                sum += ((i % 2) ? -1 : 1) * a.data[0][i] * det_matrix(b);
+                return sum;
+            }
+        }
+    }
 }
-
 Matrix inv_matrix(Matrix a)
 {
     // ToDo
