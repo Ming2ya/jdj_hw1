@@ -1,3 +1,11 @@
+<!--
+ * @Author: MIngya jin2899042558@163.com
+ * @Date: 2024-04-07 22:44:57
+ * @LastEditors: MIngya jin2899042558@163.com
+ * @LastEditTime: 2024-04-22 22:31:29
+ * @FilePath: \Coding\jdj_hw1\README.md
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
 # algebra
 
 硬件技术团队编程基础作业
@@ -77,3 +85,6 @@ add_executable (main ${SRC_LIST})
 
 修改了mol函数中的错误，data中存储的是double型数据，我定义变量时写成int型了
 
+### ver 半成品3.0
+
+完成了det函数的主体部分，我自己写的简单样例都能过，但是X-check没过

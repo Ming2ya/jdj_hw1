@@ -123,11 +123,12 @@ double det_matrix(Matrix a)
         }
         else
         {
-            int i, j, k, flag = 0;
+            int i, j, k;
             double sum = 0.0;
             for (i = 0; i < a.cols; i++)
             {
                 Matrix b = create_matrix(a.rows-1, a.cols-1);
+                int flag = 0;
                 for (j = 1; j < a.rows; j++){
                     for (k = 0; k < a.cols; k++)
                     {
@@ -138,13 +139,13 @@ double det_matrix(Matrix a)
                         }
                         else 
                         {
-                            b.data[j-1][k - flag] = a.data[j][k];
+                            b.data[j - 1][k - flag] = a.data[j][k];
                         }
                     }
                 }
                 sum += ((i % 2) ? -1 : 1) * a.data[0][i] * det_matrix(b);
-                return sum;
             }
+            return sum;
         }
     }
 }
