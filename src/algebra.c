@@ -128,8 +128,8 @@ double det_matrix(Matrix a)
             for (i = 0; i < a.cols; i++)
             {
                 Matrix b = create_matrix(a.rows-1, a.cols-1);
-                int flag = 0;
                 for (j = 1; j < a.rows; j++){
+                    int flag = 0;
                     for (k = 0; k < a.cols; k++)
                     {
                         if (k == i)
