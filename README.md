@@ -88,3 +88,7 @@ add_executable (main ${SRC_LIST})
 ### ver 半成品3.0
 
 完成了det函数的主体部分，我自己写的简单样例都能过，但是X-check没过
+
+### ver 半成品3.1
+
+修改det函数中的错误
