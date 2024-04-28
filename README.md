@@ -92,3 +92,7 @@ add_executable (main ${SRC_LIST})
 ### ver 半成品3.1
 
 修改det函数中的错误
+
+### ver 半成品4.0
+
+完成了rank函数

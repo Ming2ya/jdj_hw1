@@ -157,7 +157,16 @@ Matrix inv_matrix(Matrix a)
 
 int rank_matrix(Matrix a)
 {
-    int r = (a.cols > a.rows) ? a.rows : a.cols;
+    int r;
+    if (a.cols >= a.rows)
+    {
+        r = a.rows;
+    }
+    else
+    {
+        r = a.cols;
+        a = transpose_matrix(a);
+    }
     int i, j, k;
     for (int i = 0; i < a.rows; i++)
     {
