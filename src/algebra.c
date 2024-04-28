@@ -157,8 +157,55 @@ Matrix inv_matrix(Matrix a)
 
 int rank_matrix(Matrix a)
 {
-    // ToDo
-    return 0;
+    int r = (a.cols > a.rows) ? a.rows : a.cols;
+    int i, j, k;
+    for (int i = 0; i < a.rows; i++)
+    {
+        if (a.data[i][i] != 0)
+        {
+            for (j = i + 1; j < a.rows; j++)
+            {
+                double t = a.data[j][i] / a.data[i][i];
+                for (k = i; k < a.cols; k++)
+                {
+                    a.data[j][k] -= a.data[i][k];
+                }
+            }
+        }
+        else{
+            int flag = 0;
+            for (j = i + 1; j < a.rows; j++)
+            {
+                if (a.data[j][i] != 0)
+                {
+                    flag = 1;
+                    for (k = i; k < a.cols; k++)
+                    {
+                        double temp;
+                        temp = a.data[i][k]; 
+                        a.data[i][k] = a.data[j][k];
+                        a.data[j][k] = temp;
+                    }
+                    break;
+                }
+            }
+            if (flag != 0)
+            {
+                for (j = i + 1; j < a.rows; j++)
+                {
+                    double t = a.data[j][i] / a.data[i][i];
+                    for (k = i; k < a.cols; k++){
+                        a.data[j][k] -= a.data[i][k];
+                    }
+                }
+            }
+            else
+            {
+                r-=1;
+            }
+        }
+    }
+    return r;
 }
 
 double trace_matrix(Matrix a)
