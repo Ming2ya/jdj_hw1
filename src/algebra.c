@@ -177,7 +177,7 @@ int rank_matrix(Matrix a)
                 double t = a.data[j][i] / a.data[i][i];
                 for (k = i; k < a.cols; k++)
                 {
-                    a.data[j][k] -= a.data[i][k];
+                    a.data[j][k] -= t * a.data[i][k];
                 }
             }
         }
