@@ -96,3 +96,11 @@ add_executable (main ${SRC_LIST})
 ### ver 半成品4.0
 
 完成了rank函数
+
+### ver 半成品5.0
+
+完成了inv函数
+
+## ver 完成品
+
+我滴任务，完成啦，哈哈哈哈
