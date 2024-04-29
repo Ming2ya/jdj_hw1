@@ -151,8 +151,55 @@ double det_matrix(Matrix a)
 }
 Matrix inv_matrix(Matrix a)
 {
-    // ToDo
-    return create_matrix(0, 0);
+    if (a.rows != a.cols)
+    {
+        printf("Error: The matrix must be a square matrix.\n");
+        return create_matrix(0, 0);
+    }
+    else
+    {
+        if (det_matrix(a) == 0)
+        {
+            printf("Error: The matrix is singular.\n");
+            return create_matrix(0, 0);
+        }
+        else 
+        {
+            Matrix b = create_matrix(a.rows, a.cols);
+            int i, j, k, m;
+            for (i = 0; i < a.rows; i++)
+            {
+                for (j = 0; j < a.cols; j++)
+                {
+                    Matrix c = create_matrix(a.rows - 1, a.cols - 1);
+                    int flag_r = 0;
+                    for (k = 0; k < a.rows; k++)
+                    {
+                        if (k == j)
+                        {
+                            flag_r = 1;
+                            continue;
+                        }
+
+                        int flag_c = 0;
+
+                        for (m = 0; m < a.cols; m++)
+                        {
+                            if (m == i)
+                            {
+                                flag_c = 1;
+                                continue;
+                            }
+                            c.data[k - flag_r][m - flag_c] = a.data[k][m];
+                        }
+                    }
+                    b.data[i][j] = ((i + j) % 2 ? -1.0 : 1.0) * det_matrix(c);
+                }
+            }
+            b = scale_matrix(b, 1.0 / det_matrix(a));
+            return b;
+        }
+    }
 }
 
 int rank_matrix(Matrix a)
