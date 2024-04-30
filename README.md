@@ -104,3 +104,7 @@ add_executable (main ${SRC_LIST})
 ## ver 完成品
 
 我滴任务，完成啦，哈哈哈哈
+
+![运行](https://mingya-exp-1325526296.cos.ap-nanjing.myqcloud.com/test/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-30%20195817.png)
+
+![提交](https://mingya-exp-1325526296.cos.ap-nanjing.myqcloud.com/test/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-30%20195843.png)
